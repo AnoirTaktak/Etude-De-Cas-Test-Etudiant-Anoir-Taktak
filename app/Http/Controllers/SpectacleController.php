@@ -24,6 +24,9 @@ class SpectacleController extends Controller
     {
         $spectacles = new Spectacle([
             'datespectacle' => $request->input('datespectacle'),
+            'idsalle' => $request->input('idsalle'),
+            'idpiece' => $request->input('idpiece')
+
         ]
         );
         $spectacles->save();
