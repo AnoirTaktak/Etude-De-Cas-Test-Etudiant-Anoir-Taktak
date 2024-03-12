@@ -29,3 +29,9 @@ use App\Http\Controllers\PieceController;
 Route::middleware('api')->group(function () {
     Route::resource('pieces', PieceController::class);
 });
+
+use App\Http\Controllers\SpectacleController;
+
+Route::middleware('api')->group(function(){
+    Route::resource('spectacles',SpectacleController::class);
+});

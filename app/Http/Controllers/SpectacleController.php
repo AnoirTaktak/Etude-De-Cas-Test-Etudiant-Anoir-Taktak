@@ -13,8 +13,8 @@ class SpectacleController extends Controller
      */
     public function index()
     {
-        $pieces = Piece::all()->toArray();
-        return array_reverse($pieces);
+        $spectacles = Spectacle::all()->toArray();
+        return array_reverse($spectacles);
     }
 
     /**
@@ -22,11 +22,11 @@ class SpectacleController extends Controller
      */
     public function store(Request $request)
     {
-        $piece = new Piece([
-            'nomauteur' => $request->input('titre'),
-            'email' => $request->input('flyer')
-        ]);
-            $piece->save();
+        $spectacles = new Spectacle([
+            'datespectacle' => $request->input('datespectacle'),
+        ]
+        );
+        $spectacles->save();
             return response()->json('Piece créé !');
     }
 
@@ -35,8 +35,8 @@ class SpectacleController extends Controller
      */
     public function show($id)
     {
-        $piece= Piece::find($id);
-        return response()->json($piece);
+        $spectacles= Spectacle::find($id);
+        return response()->json($spectacles);
     }
 
     /**
@@ -44,9 +44,9 @@ class SpectacleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $piece = Piece::find($id);
-        $piece->update($request->all());
-        return response()->json($piece);
+        $spectacles = Spectacle::find($id);
+        $spectacles->update($request->all());
+        return response()->json($spectacles);
     }
 
     /**
@@ -54,8 +54,8 @@ class SpectacleController extends Controller
      */
     public function destroy($id)
     {
-        $piece = Piece::find($id);
-        $piece->delete();
-        return response()->json(['message' => 'Piece  deleted successfully']);
+        $spectacles = Spectacle::find($id);
+        $spectacles->delete();
+        return response()->json(['message' => 'Spectacle deleted successfully']);
     }
 }

@@ -16,8 +16,8 @@ class SalleController extends Controller
     public function store(Request $request)
     {
         $salle = new Salle([
-        'nomauteur' => $request->input('libelle'),
-        'email' => $request->input('adresse')
+        'libelle' => $request->input('libelle'),
+        'adresse' => $request->input('adresse')
     ]);
         $salle->save();
         return response()->json('Salle créé !');
