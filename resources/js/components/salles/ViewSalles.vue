@@ -16,6 +16,7 @@
            <button class="btn btn-primary">Modifier</button>
           </td>
           <td>
+            <router-link :to="{name: 'editsalle', params: { id: sal.id }}" ></router-link>
             <button @click="deleteSalle(salle.id)" class="btn btn-danger">Supprimer</button>
           </td>
         </tr>

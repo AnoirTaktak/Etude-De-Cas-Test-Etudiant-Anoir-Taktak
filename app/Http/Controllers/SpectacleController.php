@@ -23,9 +23,9 @@ class SpectacleController extends Controller
     public function store(Request $request)
     {
         $spectacles = new Spectacle([
-            'datespectacle' => $request->input('datespectacle'),
-            'idsalle' => $request->input('idsalle'),
-            'idpiece' => $request->input('idpiece')
+            'datespectacle' => $request->input('spectacle.datespectacle'),
+            'idsalle' => $request->input('salle.id'),
+            'idpiece' => $request->input('piece.id')
 
         ]
         );

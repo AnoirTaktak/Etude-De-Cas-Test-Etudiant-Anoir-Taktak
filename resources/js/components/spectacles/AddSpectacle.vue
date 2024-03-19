@@ -58,6 +58,7 @@ onMounted(() => {
 
 const addSpectacle = async () => {
   try {
+    console.log(spectacle.value);
     await axios.post('http://localhost:8000/api/spectacles', spectacle.value); // URL de votre API pour ajouter un spectacle
     router.push({ name: 'viewspectacles' });
   } catch (error) {

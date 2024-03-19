@@ -10,6 +10,7 @@ class Spectacle extends Model
     use HasFactory;
 
     protected $primaryKey = ['idpiece', 'datespectacle']; // Définir la clé primaire composite
+    protected $fillable = ['datespectacle'];
 
     public function piece()
     {
